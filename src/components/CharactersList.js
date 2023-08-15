@@ -105,36 +105,48 @@ export const CharacterList = () => {
   
         <div className='content'>
             <div className='card'>
-                <h2>{ bulbasaur.name} </h2>
+                <h2>{ (bulbasaur.name)[0].toUpperCase() + (bulbasaur.name).substring(1)} </h2>
 
                 <div className='divCard'>
-                      <button className='buttonDevolve' onClick={() => devolvePokemon(bulbasaur.id, pok1, setBulbasaur)}>Devolve</button>
+                      <button className='buttonDevolve' onClick={() => devolvePokemon(bulbasaur.id, pok1, setBulbasaur)}><img src='https://icon-library.com/images/white-back-icon/white-back-icon-7.jpg'/></button>
                       <img src={bulbasaur.sprites.front_default} alt="bulbasaur img"/>
-                      <button className='buttonEvolve' onClick={() => evolvePokemon(bulbasaur.id, pok1, setBulbasaur)}>Evolve</button>
+                      <button className='buttonEvolve' onClick={() => evolvePokemon(bulbasaur.id, pok1, setBulbasaur)}><img src='https://icon-library.com/images/white-back-icon/white-back-icon-7.jpg'/></button>
                 </div>
+
+                <p>Id: {bulbasaur.id} </p>
+                <p>Base experience: {bulbasaur.base_experience}</p>
+                <p>Height: {bulbasaur.height} </p>
+                <p>Weight: {bulbasaur.weight}</p>
             </div>
   
             <div className='card' >
-                <h2>{ charmander.name} </h2>
+                <h2>{  (charmander.name)[0].toUpperCase() + (charmander.name).substring(1)} </h2>
 
                 <div className='divCard'>
-                      <button className='buttonDevolve' onClick={() => devolvePokemon(charmander.id, pok2, setCharmander)}>Devolve</button>
+                      <button className='buttonDevolve' onClick={() => devolvePokemon(charmander.id, pok2, setCharmander)}><img src='https://icon-library.com/images/white-back-icon/white-back-icon-7.jpg'/></button>
                       <img src={charmander.sprites.front_default} alt="bulbasaur img"/>
-                      <button className='buttonEvolve' onClick={() => evolvePokemon(charmander.id, pok2, setCharmander)}>Evolve</button>
+                      <button className='buttonEvolve' onClick={() => evolvePokemon(charmander.id, pok2, setCharmander)}><img src='https://icon-library.com/images/white-back-icon/white-back-icon-7.jpg'/></button>
                 </div>
                 
-  
+                <p>Id: {charmander.id} </p>
+                <p>Base experience: {charmander.base_experience}</p>
+                <p>Height: {charmander.height} </p>
+                <p>Weight: {charmander.weight}</p>
             </div>
   
             <div className='card'>
-                <h2>{ squirtle.name} </h2>
+                <h2>{(squirtle.name)[0].toUpperCase() + (squirtle.name).substring(1)} </h2>
 
                 <div className='divCard'>
-                      <button className='buttonDevolve' onClick={() => devolvePokemon(squirtle.id, pok3, setSquirtle)}>Devolve</button>
+                      <button className='buttonDevolve' onClick={() => devolvePokemon(squirtle.id, pok3, setSquirtle)}><img src='https://icon-library.com/images/white-back-icon/white-back-icon-7.jpg'/></button>
                       <img src={squirtle.sprites.front_default} alt="bulbasaur img"/>
-                      <button className='buttonEvolve' onClick={() => evolvePokemon(squirtle.id, pok3, setSquirtle)}>Evolve</button>
+                      <button className='buttonEvolve' onClick={() => evolvePokemon(squirtle.id, pok3, setSquirtle)}><img src='https://icon-library.com/images/white-back-icon/white-back-icon-7.jpg'/></button>
                 </div>
                 
+                <p>Id: {squirtle.id} </p>
+                <p>Base experience: {squirtle.base_experience}</p>
+                <p>Height: {squirtle.height} </p>
+                <p>Weight: {squirtle.weight}</p>
   
             </div>
         </div>  
