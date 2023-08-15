@@ -26,6 +26,7 @@ code {
 .card{
   display: block;
   width:15%;
+  height:300px;
   margin: 2%;
   padding: 1%;
   background-color: rgb(108, 108, 108);
@@ -53,7 +54,7 @@ code {
   margin-left: 40%;
   margin-top: 4%;
   color: aliceblue;
-  background-color: rgb(64, 220, 12);
+
   border: none;
   outline: 0;
   border-radius: 0.3em;
@@ -65,7 +66,18 @@ code {
   cursor: pointer;
 }
 
+.buttonEvolve{
+  background-color: rgb(64, 220, 12);
+}
+
+.buttonDevolve{
+  background-color: rgb(220, 31, 107);
+}
 .card button:hover{
   transform: scale(1.1);
 }
 
+.divCard{
+  display: block;
+
+}
