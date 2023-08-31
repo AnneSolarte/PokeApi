@@ -20,52 +20,19 @@ export const CharacterList = () => {
   
 
   useEffect(() => {
-    (async() => {
-      const bulbasaur = JSON.parse(localStorage.getItem("bulbasaur"));
-      const charmander = JSON.parse(localStorage.getItem("charmander"));
-      const squirtle = JSON.parse(localStorage.getItem("squirtle"));
-        if (bulbasaur && charmander && squirtle) {
-            setBulbasaur(bulbasaur);
-            setCharmander(charmander);
-            setSquirtle(squirtle)
-            setLoading(false)
-        } else {
-            console.log(loading);
+    const getCharacters = async() => {
+      const b = await getCharacter(poke1);
+      const c = await getCharacter(poke2);
+      const s = await getCharacter(poke3);
 
-            // const b = getCharacter(poke1);
-            // const c = getCharacter(poke2);
-            // const s = getCharacter(poke3);
-
-            // setBulbasaur(b);
-            // setCharmander(c);
-            // setSquirtle(s);
-
-            const data = async () => {
-              try {
-                
-                let data = await Promise.all([getCharacter(poke1), getCharacter(poke2), getCharacter(poke3)]);
-                console.log(data);
-                return data
-              } catch (error) {
-                console.log('error: ' + error);
-              }
-            }
-
-            const dataArray = data()
-            console.log(dataArray)
-
-            setBulbasaur(dataArray[0]);
-            setCharmander(dataArray[1]);
-            setSquirtle(dataArray[2]);
-
-            
-            setLoading(false);
-            console.log(loading)
-        }
-    })()
-    
-    
-  }, [], loading);
+      setBulbasaur(b);
+      setCharmander(c);
+      setSquirtle(s); 
+      setLoading(false);
+    }
+    getCharacters();
+     
+  }, []);
 
 
   const evolvePokemon = async(id, oldId, setName) => {
@@ -105,7 +72,7 @@ export const CharacterList = () => {
   
         <div className='content'>
             <div className='card'>
-                <h2>{ (bulbasaur.name)[0].toUpperCase() + (bulbasaur.name).substring(1)} </h2>
+                <h2>{bulbasaur.name} </h2>
 
                 <div className='divCard'>
                       <button className='buttonDevolve' onClick={() => devolvePokemon(bulbasaur.id, pok1, setBulbasaur)}><img src='https://icon-library.com/images/white-back-icon/white-back-icon-7.jpg'/></button>
